@@ -1,5 +1,5 @@
 {
-    "group":"job",
+    "group":"Test",
     "speedtestMode":"all",
     "pingMethod":"googleping",
     "sortMethod":"rspeed",

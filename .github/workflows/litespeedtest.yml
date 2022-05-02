@@ -33,7 +33,8 @@ jobs:
         wget -O litespeedtest.gz https://github.com/xxf098/LiteSpeedTest/releases/download/v0.9.0/lite-linux-amd64-v0.9.0.gz
         gunzip litespeedtest.gz
         chmod +x litespeedtest
-        ./litespeedtest --test https://raw.githubusercontent.com/alanbobs999/TopFreeProxies/master/Eternity.yml
+        
+        ./litespeedtest --config config.json --test https://raw.githubusercontent.com/alanbobs999/TopFreeProxies/master/Eternity.yml
       
     - name: 提交更改
       run: |                 

@@ -1,7 +1,6 @@
 name: SSH Server
 on:
   workflow_dispatch:
-  push:
 jobs:
   build:
     runs-on: ubuntu-latest

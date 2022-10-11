@@ -1,4 +1,4 @@
-name: SpeedTest
+name: Test
 
 # 触发条件
 on:
@@ -31,7 +31,7 @@ jobs:
     - name: 执行任务
       run: |
         wget -O dev.zip https://github.com/alanbobs999/TopFreeProxies/archive/refs/heads/dev.zip
-        unzip dev.zip -D ./
+        unzip dev.zip -d ./
         cd ./TopFreeProxies-dev
         pip install -r ./utils/requirements.txt
         

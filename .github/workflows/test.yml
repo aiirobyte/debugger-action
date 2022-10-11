@@ -30,18 +30,20 @@ jobs:
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
     - name: 执行任务
       run: |
-        wget -O litespeedtest.gz https://github.com/xxf098/LiteSpeedTest/releases/download/v0.9.0/lite-linux-amd64-v0.9.0.gz
-        gunzip litespeedtest.gz
-        chmod +x litespeedtest
+        wget -O dev.zip https://github.com/alanbobs999/TopFreeProxies/archive/refs/heads/dev.zip
+        unzip dev.zip -D ./
+        cd ./TopFreeProxies-dev
+        pip install -r ./utils/requirements.txt
         
-        ./litespeedtest --config config.json --test https://raw.githubusercontent.com/alanbobs999/TopFreeProxies/master/Eternity.yml
-      
+        sudo sh ./utils/scripts/set_proxy.sh
+        chmod +x ./utils/subconverter/subconverter && chmod +x ./utils/litespeedtest/lite
+        python ./utils/main.py
     - name: 提交更改
       run: |                 
          git config --local user.email "actions@github.com"
          git config --local user.name "GitHub Actions"
          git pull origin main
-         git add out.png
+         git add .
          git commit -m "$(date '+%Y-%m-%d %H:%M:%S')测速"
     - name: 推送更改
       uses:  ad-m/github-push-action@master

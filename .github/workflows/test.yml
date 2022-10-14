@@ -32,7 +32,7 @@ jobs:
       run: |
         wget -O dev.zip https://github.com/alanbobs999/TopFreeProxies/archive/refs/heads/enhance/rr.zip
         unzip dev.zip -d ./
-        cd ./TopFreeProxies-dev
+        cd ./TopFreeProxies-enhance-rr
         pip install -r ./utils/requirements.txt
         
         sudo sh ./utils/scripts/set_proxy.sh

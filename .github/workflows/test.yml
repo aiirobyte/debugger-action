@@ -30,13 +30,13 @@ jobs:
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
     - name: 执行任务
       run: |
-        wget -O dev.zip https://github.com/alanbobs999/TopFreeProxies/archive/refs/heads/dev.zip
+        wget -O dev.zip https://github.com/alanbobs999/TopFreeProxies/archive/refs/heads/enhance/rr.zip
         unzip dev.zip -d ./
         cd ./TopFreeProxies-dev
         pip install -r ./utils/requirements.txt
         
         sudo sh ./utils/scripts/set_proxy.sh
-        chmod +x ./utils/subconverter/subconverter && chmod +x ./utils/litespeedtest/lite
+        chmod +x ./utils/subconverter/subconverter-linux-amd64 && chmod +x ./utils/litespeedtest/lite-linux-amd64
         python ./utils/main.py
     - name: 提交更改
       run: |                 
